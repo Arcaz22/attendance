@@ -6,6 +6,7 @@ const CreateUser = require("../services/master_data/users/create");
 const DeleteUser = require("../services/master_data/users/delete");
 const FindUsers = require("../services/master_data/users/find");
 const ChangePassword = require("../services/master_data/users/change_password");
+const CreateEmployee = require("../services/master_data/users/create_employee");;
 
 const FindUserController = async (req, res) => {
   try {
@@ -88,10 +89,28 @@ const ChangePasswordController = async (req, res) => {
   }
 };
 
+const CreateEmployeeController = async (req, res) => {
+  try {
+    res.status(StatusCodes.CREATED).json(
+      new BaseResponse({
+        status: StatusCodes.CREATED,
+        message: `Berhasil Menambahkan Data Employee`,
+        data: await CreateEmployee(req.body),
+      })
+    );
+  } catch (error) {
+    const status = error?.status || StatusCodes.INTERNAL_SERVER_ERROR;
+    res
+      .status(status)
+      .json(new BaseResponse({ status: status, message: error.message }));
+  }
+};
+
 module.exports = {
   LoginUserController,
   CreateUserController,
   DeleteUserController,
   FindUserController,
   ChangePasswordController,
+  CreateEmployeeController
 };

@@ -173,4 +173,41 @@
  *                      schema:
  *                          $ref: '#/components/schemas/BaseError'
  *
+ * /v1/user/create_employee:
+ *   post:
+ *     security:
+ *       - bearerAuth: []
+ *     summary: create new employee
+ *     tags: [User]
+ *     requestBody:
+ *          content:
+ *              application/json:
+ *                  schema:
+ *                      type: object
+ *                      properties:
+ *                          userId:
+ *                              description: user id
+ *                              type: string
+ *                          employee_type:
+ *                              description: employee type
+ *                              type: string
+ *                          departement:
+ *                              description: user departement optional
+ *                              type: string
+ *     responses:
+ *       200:
+ *         description: Success message.
+ *         content:
+ *           application/json:
+ *             schema:
+ *              allOf:
+ *                  - $ref: '#/components/schemas/BaseResponse'
+ *
+ *       500:
+ *         description: Some server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *              $ref: '#/components/schemas/BaseError'
+ * 
  */

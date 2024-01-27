@@ -5,6 +5,7 @@ const constant = require('../../../utils/constant');
 const schema = require('../../../schemas/validations/user/FilterForm');
 const BaseError = require('../../../schemas/responses/BaseError');
 const DELETE_STATUS = require('../../../schemas/enums/deleted_status');
+const Employee = require('../../../schemas/models/Employee');
 
 const FindUsers = async (body) => {
   const validatedBody = schema.validate(body);
@@ -23,10 +24,16 @@ const FindUsers = async (body) => {
     where: generateWhereClause(validatedBody.value),
     offset: page * constant.PAGE_SIZE - 10,
     limit: length,
-    order: [['updated_at', 'DESC']],
     attributes: {
       exclude: ['created_at', 'updated_at', 'deleted', 'password'],
     },
+    include: [{
+      model: Employee,
+      as: 'employee',
+      attributes: {
+        exclude: ['created_at', 'updated_at', 'deleted', 'userId'],
+      },
+    }],
   });
   return {
     data,

@@ -31,4 +31,9 @@ module.exports = [
         method: `DELETE`,
         allowed_role: [ ROLE.KARYAWAN ]
     },
+    {
+        path: `/v1/user/create_employee`,
+        method: `POST`,
+        allowed_role: [ ROLE.KARYAWAN ]
+    },
 ];
