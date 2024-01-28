@@ -6,7 +6,7 @@ const CreateUser = require("../services/master_data/users/create");
 const DeleteUser = require("../services/master_data/users/delete");
 const FindUsers = require("../services/master_data/users/find");
 const ChangePassword = require("../services/master_data/users/change_password");
-const CreateEmployee = require("../services/master_data/users/create_employee");;
+const CreateEmployee = require("../services/master_data/users/create_employee");
 
 const FindUserController = async (req, res) => {
   try {

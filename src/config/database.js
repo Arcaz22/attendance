@@ -11,10 +11,10 @@ const attendance = new Sequelize({
   password: process.env.DB_PASSWORD,
 });
 
-attendance.sync().then(() => {
-  console.log('Model-model telah berhasil disinkronkan dengan basis data.');
-}).catch((error) => {
-  console.error('Gagal menyelesaikan sinkronisasi:', error);
-});
+// attendance.sync().then(() => {
+//   console.log('Model-model telah berhasil disinkronkan dengan basis data.');
+// }).catch((error) => {
+//   console.error('Gagal menyelesaikan sinkronisasi:', error);
+// });
 
 module.exports = attendance;

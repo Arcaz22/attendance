@@ -9,7 +9,7 @@ module.exports = [
     {
         path: `/v1/user/change_password`,
         method: `POST`,
-        allowed_role: [ ROLE.KARYAWAN]
+        allowed_role: [ ROLE.KARYAWAN ]
     },
     {
         path: `/v1/user`,
@@ -33,6 +33,16 @@ module.exports = [
     },
     {
         path: `/v1/user/create_employee`,
+        method: `POST`,
+        allowed_role: [ ROLE.KARYAWAN ]
+    },
+    {
+        path: `/v1/attendance/check_in`,
+        method: `POST`,
+        allowed_role: [ ROLE.KARYAWAN ]
+    },
+    {
+        path: `/v1/attendance/check_out`,
         method: `POST`,
         allowed_role: [ ROLE.KARYAWAN ]
     },

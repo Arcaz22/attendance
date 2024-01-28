@@ -6,6 +6,7 @@ const schema = require('../../../schemas/validations/user/FilterForm');
 const BaseError = require('../../../schemas/responses/BaseError');
 const DELETE_STATUS = require('../../../schemas/enums/deleted_status');
 const Employee = require('../../../schemas/models/Employee');
+const Attendance = require('../../../schemas/models/Attendance');
 
 const FindUsers = async (body) => {
   const validatedBody = schema.validate(body);
@@ -32,6 +33,11 @@ const FindUsers = async (body) => {
       as: 'employee',
       attributes: {
         exclude: ['created_at', 'updated_at', 'deleted', 'userId'],
+      },
+      model: Attendance,
+      as: 'attendance',
+      attributes: {
+        exclude: ['id', 'userId'],
       },
     }],
   });
