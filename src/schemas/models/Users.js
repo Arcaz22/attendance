@@ -2,6 +2,7 @@ const sequelize = require('sequelize');
 const db = require('../../config/database');
 const Employee = require('./Employee');
 const Attendance = require('./Attendance');
+const Permit = require('./Permit');
 
 const Users = db.define('users', {
   id: {
@@ -59,5 +60,6 @@ Users.beforeUpdate((userInstance) => {
 
 Users.hasMany(Employee, { foreignKey: 'userId', as: 'employee' });
 Users.hasMany(Attendance, { foreignKey: 'userId', as: 'attendance' })
+Users.hasMany(Permit, { foreignKey: 'userId', as: 'permit' })
 
 module.exports = Users;

@@ -46,4 +46,14 @@ module.exports = [
         method: `POST`,
         allowed_role: [ ROLE.KARYAWAN ]
     },
+    {
+        path: `/v1/permit/create_permit`,
+        method: `POST`,
+        allowed_role: [ ROLE.KARYAWAN ]
+    },
+    {
+        path: `/v1/permit/approval_permit`,
+        method: `PUT`,
+        allowed_role: [ ROLE.KARYAWAN ]
+    },
 ];

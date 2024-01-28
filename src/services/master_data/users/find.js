@@ -7,6 +7,7 @@ const BaseError = require('../../../schemas/responses/BaseError');
 const DELETE_STATUS = require('../../../schemas/enums/deleted_status');
 const Employee = require('../../../schemas/models/Employee');
 const Attendance = require('../../../schemas/models/Attendance');
+const Permit = require('../../../schemas/models/Permit');
 
 const FindUsers = async (body) => {
   const validatedBody = schema.validate(body);
@@ -28,19 +29,31 @@ const FindUsers = async (body) => {
     attributes: {
       exclude: ['created_at', 'updated_at', 'deleted', 'password'],
     },
-    include: [{
-      model: Employee,
-      as: 'employee',
-      attributes: {
-        exclude: ['created_at', 'updated_at', 'deleted', 'userId'],
+    include: [
+      {
+        model: Employee,
+        as: 'employee',
+        attributes: {
+          exclude: ['created_at', 'updated_at', 'deleted', 'userId'],
+        },
       },
-      model: Attendance,
-      as: 'attendance',
-      attributes: {
-        exclude: ['id', 'userId'],
+      {
+        model: Attendance,
+        as: 'attendance',
+        attributes: {
+          exclude: ['id', 'userId'],
+        },
       },
-    }],
+      {
+        model: Permit,
+        as: 'permit',
+        attributes: {
+          exclude: ['userId', 'permit_type', 'reason', 'proof'],
+        },
+      },
+    ],
   });
+
   return {
     data,
     total,

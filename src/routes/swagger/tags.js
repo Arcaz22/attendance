@@ -7,5 +7,7 @@
  *     description: Authentication API
  *   - name: Attendance
  *     description: Attendance API
+ *   - name: Permit
+ *     description: Permit API
  *
  */
