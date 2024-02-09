@@ -4,7 +4,7 @@ module.exports = [
     {
         path: `/v1/user`,
         method: `GET`,
-        allowed_role: [ ROLE.KARYAWAN ]
+        allowed_role: [ ROLE.ADMIN ]
     },
     {
         path: `/v1/user/change_password`,
@@ -24,12 +24,12 @@ module.exports = [
     {
         path: `/v1/user`,
         method: `DELETE`,
-        allowed_role: [ ROLE.KARYAWAN ]
+        allowed_role: [ ROLE.ADMIN ]
     },
     {
         path: `/v1/user`,
         method: `DELETE`,
-        allowed_role: [ ROLE.KARYAWAN ]
+        allowed_role: [ ROLE.ADMIN ]
     },
     {
         path: `/v1/user/create_employee`,
@@ -54,6 +54,6 @@ module.exports = [
     {
         path: `/v1/permit/approval_permit`,
         method: `PUT`,
-        allowed_role: [ ROLE.KARYAWAN ]
+        allowed_role: [ ROLE.ADMIN ]
     },
 ];

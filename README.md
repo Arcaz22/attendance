@@ -1,53 +1,56 @@
-# Express API Starter
+<br/>
+<p align="center">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Logo" width="80" height="80">
+  </a>
 
-How to use this template:
+  <h3 align="center">Attendance API</h3>
 
+  <p align="center">
+    Your All-in-One Solution for Managing Employee Attendance
+    <br/>
+</p>
+
+## About The Project
+
+Welcome to the Attendance API, your all-in-one solution for managing employee attendance seamlessly. This RESTful API is designed to streamline the attendance tracking process with a variety of features tailored to meet your organization's needs.
+
+## Fitures
+
+* Authentication
+  Secure your API with JWT (Bearer Token) authentication. With two distinct roles – admin and employee – you can control access and permissions effectively.
+
+* User Management
+  Effortlessly manage users with functionalities like creating, finding, deleting, and changing passwords. Additionally, easily add new employees to the system.
+
+* Attendance Tracking
+  Track employee attendance accurately with check-in and check-out functionalities. Stay informed about when your employees arrive and leave the workplace effortlessly.
+
+* Permit Management
+  Handle employee absence seamlessly with a permit form for requesting time off. Admin approval ensures smooth workflow management.
+
+## Built With
+
+- [Express Js](https://expressjs.com/) <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" width="20" height="20"/>
+- [Sequelize](https://sequelize.org/) <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sequelize/sequelize-original.svg" width="20" height="20"/>
+- [Swagger](https://swagger.io/) <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swagger/swagger-original.svg" width="20" height="20"/>
+
+
+
+## Getting Started
+
+### Installation
+
+1. Clone the repo
 ```sh
-npx create-express-api --directory my-api-name
+git clone https://github.com/Arcaz22/attendance.git
 ```
-
-Includes API Server utilities:
-
-* [morgan](https://www.npmjs.com/package/morgan)
-  * HTTP request logger middleware for node.js
-* [helmet](https://www.npmjs.com/package/helmet)
-  * Helmet helps you secure your Express apps by setting various HTTP headers. It's not a silver bullet, but it can help!
-* [dotenv](https://www.npmjs.com/package/dotenv)
-  * Dotenv is a zero-dependency module that loads environment variables from a `.env` file into `process.env`
-* [cors](https://www.npmjs.com/package/cors)
-  * CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.
-
-Development utilities:
-
-* [nodemon](https://www.npmjs.com/package/nodemon)
-  * nodemon is a tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected.
-* [eslint](https://www.npmjs.com/package/eslint)
-  * ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.
-* [jest](https://www.npmjs.com/package/jest)
-  * Jest is a delightful JavaScript Testing Framework with a focus on simplicity.
-* [supertest](https://www.npmjs.com/package/supertest)
-  * HTTP assertions made easy via superagent.
-
-## Setup
-
-```
+2. Install NPM packages
+```sh
 npm install
 ```
-
-## Lint
-
+3. Create a .env file following .env.example
+4. To access documentation on
+```sh
+http://domain:port/api/
 ```
-npm run lint
-```
-
-## Test
-
-```
-npm test
-```
-
-## Development
-
-```
-npm run dev
-```
+5. Good Luck!

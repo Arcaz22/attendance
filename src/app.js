@@ -16,7 +16,7 @@ const swaggerOption = {
     info: {
       title: 'API Attendance',
       version: '1.0.0',
-      description: 'Attendance Backend Documentaion',
+      description: 'Attendance Backend Documentation',
     },
     server: [
       {
